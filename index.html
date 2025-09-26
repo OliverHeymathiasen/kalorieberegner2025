@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalorieberegner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator">
+        <h1>Kalorieberegner</h1>
+        <form id="calcForm">
+            <label for="gender">Køn:</label>
+            <select id="gender">
+                <option value="male">Mand</option>
+                <option value="female">Kvinde</option>
+            </select>
+
+            <label for="age">Alder (år):</label>
+            <input type="number" id="age" required>
+
+            <label for="weight">Vægt (kg):</label>
+            <input type="number" id="weight" required>
+
+            <label for="height">Højde (cm):</label>
+            <input type="number" id="height" required>
+
+            <label for="activity">Aktivitetsniveau:</label>
+            <select id="activity">
+                <option value="1.2">Stillesiddende</option>
+                <option value="1.375">Let aktivitet</option>
+                <option value="1.55">Moderat aktivitet</option>
+                <option value="1.725">Høj aktivitet</option>
+                <option value="1.9">Meget høj aktivitet</option>
+            </select>
+
+            <label for="goal">Mål:</label>
+            <select id="goal">
+                <option value="0">Hold vægt</option>
+                <option value="-500">Tabe 0,5 kg/uge</option>
+                <option value="-1000">Tabe 1 kg/uge</option>
+                <option value="500">Tag på 0,5 kg/uge</option>
+                <option value="1000">Tag på 1 kg/uge</option>
+            </select>
+
+            <button type="button" onclick="calculateCalories()">Beregn</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
