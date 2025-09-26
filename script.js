@@ -11,16 +11,23 @@ function calculateCalories() {
         return;
     }
 
-    let bmr;
-    if (gender === "male") {
-        bmr = 10 * weight + 6.25 * height - 5 * age + 5;
-    } else {
-        bmr = 10 * weight + 6.25 * height - 5 * age - 161;
-    }
+    // BMR Mifflin-St Jeor
+    let bmr = gender === "male"
+        ? 10 * weight + 6.25 * height - 5 * age + 5
+        : 10 * weight + 6.25 * height - 5 * age - 161;
 
+    // TDEE = BMR * aktivitetsniveau
     let tdee = bmr * activity;
+
+    // Juster for vægttab/vægtøgning
     tdee += goal;
 
-    document.getElementById('result').innerHTML = 
-        `Dit daglige kaloribehov er ca. <strong>${Math.round(tdee)}</strong> kcal.`;
+    // Proteinberegning (1,6-2 g pr kg)
+    const proteinMin = Math.round(weight * 1.6);
+    const proteinMax = Math.round(weight * 2);
+
+    document.getElementById('result').innerHTML = `
+        Dit daglige kaloribehov er ca. <strong>${Math.round(tdee)}</strong> kcal.<br>
+        Proteinbehov: <strong>${proteinMin} - ${proteinMax}</strong> g/dag.
+    `;
 }
