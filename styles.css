@@ -56,3 +56,10 @@ button:hover {
   margin-top: 0;
   color: #2c662d;
 }
+
+.logo {
+  display: block;
+  margin: 0 auto 20px auto;
+  max-width: 150px; /* juster størrelsen */
+  height: auto;
+}
