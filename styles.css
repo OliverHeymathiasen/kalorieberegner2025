@@ -59,7 +59,11 @@ button:hover {
 
 .logo {
   display: block;
-  margin: 0 auto 20px auto;
-  max-width: 150px; /* juster størrelsen */
+  margin: 0 auto 10px auto;
+  max-width: 80px;  /* gør billedet mindre */
   height: auto;
+}
+
+}
+
 }
